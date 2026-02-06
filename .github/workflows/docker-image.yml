@@ -26,7 +26,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: alicel07/dsci310-ia3-alicele07-image
+          images: alicel07/dsci310-ia3-alicele07-docker
           tags: |
             type=raw, value=latest
             type=sha, format=short
