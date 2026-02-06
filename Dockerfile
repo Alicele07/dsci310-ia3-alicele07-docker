@@ -1,10 +1,12 @@
 FROM rocker/rstudio:4.4.2
 
-COPY clean_data.r /home/rstudio/clean_data.r
-COPY renv.lock /home/rstudio/renv.lock
+WORKDIR /home/rstudio
+
+COPY clean_data.R clean_data.R
+COPY renv.lock renv.lock
 
 USER root
 
-RUN R -e "install.packages('renv'); renv::restore()"
+RUN R -e "install.packages('renv', repos='https://cloud.r-project.org')"
+RUN R -e "renv::restore()"
 
-USER rstudio
