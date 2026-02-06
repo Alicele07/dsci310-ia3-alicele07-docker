@@ -26,10 +26,10 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: alicele07/dsci310-ia3-alicele07-image:latest
+          images: alicele07/dsci310-ia3-alicele07-image
           tags: |
-            type=raw, value={{sha}},enable=${{github.ref_type != 'tag' }}
             type=raw, value=latest
+            type=sha, format=short
 
       - name: Build and push Docker image
         uses: docker/build-push-action@v6
