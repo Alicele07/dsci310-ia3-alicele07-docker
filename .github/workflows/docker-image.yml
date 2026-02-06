@@ -9,7 +9,8 @@ on:
     branches: [ "main" ]
     paths:
       - 'Dockerfile'
-  workflow_dispatch:
+      - .github/workflows/docker-image.yml
+      - 'conda-linux-64.lock'
 
 jobs:
 
