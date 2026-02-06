@@ -42,4 +42,3 @@ jobs:
         TAG=$(date +%Y%m%d%H%M%S)
         docker push $IMAGE_NAME:$TAG
         docker push $IMAGE_NAME:latest
-    
